@@ -1,0 +1,9 @@
+.button {
+  width: 100%;
+  margin-top: 31px;
+  height: 56px;
+  background-color: transparent;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  border-radius: 12px;
+  text-align: start;
+}
