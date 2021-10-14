@@ -13,3 +13,12 @@
   color: #ffffff;
   background-color: #f9a826;
 }
+
+.optionContainer h2 {
+  text-align: center;
+  color: #1d355d;
+  font-size: 26px;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+  margin-bottom: 0;
+}

@@ -17,11 +17,26 @@
 }
 
 .btnAnswer {
+  display: flex;
   font-family: "Poppins", "sans-serif";
   font-weight: 500;
   font-size: 18px;
+  border-radius: 12px;
+  width: 100%;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 31px;
   color: #6066d0;
-  text-align: center;
+  border: 2px solid #6066d0;
+}
+
+.btnAnswer div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnAnswer:hover {
@@ -30,13 +45,48 @@
   font-size: 18px;
   color: #ffffff;
   background-color: #f9a826;
+  border: none;
 }
 
 .flag {
   width: 84px;
   height: 54px;
-  background-color: black;
   z-index: 1;
   margin-left: 35px;
   margin-bottom: 28px;
+}
+
+.flag img {
+  width: 100%;
+  box-shadow: 3px 3px rgba(131, 131, 131, 0.219);
+}
+
+.nextBtn {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next {
+  width: 116px;
+  text-align: center;
+  color: white;
+  background-color: #f9a826;
+  border: none;
+  font-size: 18px;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 700;
+}
+
+.correctAnswer {
+  background-color: #60bf88;
+  color: #ffffff;
+  border: none;
+}
+
+.wrongAnswer {
+  background-color: #ea8282 !important;
+  color: #ffffff !important;
+  border: none !important;
 }

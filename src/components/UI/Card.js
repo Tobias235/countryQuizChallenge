@@ -4,7 +4,7 @@ import adventure from "../../images/adventure.svg";
 import winner from "../../images/winners.svg";
 
 const Card = (props) => {
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
 
   const showImage = showResult ? (
     <div className={styles.winners}>
