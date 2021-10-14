@@ -7,7 +7,7 @@ const Quizresult = (props) => {
       <div className={styles.results}>
         <h2>Results</h2>
         <p className={styles.resultText}>
-          You got <span>{props.onShowResult}</span> correct answers
+          You got <span>{props.onShowResult} / 10</span> correct answers
         </p>
         <Button onClick={props.onShowOption} className={styles.resultButton}>
           Try again
