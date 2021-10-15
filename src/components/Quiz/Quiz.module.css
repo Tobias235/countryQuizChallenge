@@ -90,3 +90,7 @@
   color: #ffffff !important;
   border: none !important;
 }
+
+.fullWidth {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styles from "./Quiz.module.css";
@@ -6,39 +6,38 @@ import styles from "./Quiz.module.css";
 const Quiz = (props) => {
   const [capital, setCapital] = useState("");
   const [flag, setFlag] = useState("");
-  const [optionsArray, setOptionsArray] = useState([]);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState("");
-  const [result, setResult] = useState(1);
-  const [next, setNext] = useState(false);
+  const [optionsArray, setOptionsArray] = useState([]);
+  const [result, setResult] = useState(0);
+  const [next, setNext] = useState(0);
+  const [nextBtn, setNextBtn] = useState(false);
+
+  const answersRef = useRef(null);
 
   const countriesArray = props.countries;
   const number = Math.floor(Math.random() * 250);
+
   let optionArray = [];
 
   useEffect(() => {
-    setFlag(countriesArray[number].flags.png);
-    setOptionsArray(countriesArray[number]);
-    if (countriesArray[number].captial === "") {
-      return;
-    } else {
+    if (countriesArray[number].hasOwnProperty("capital")) {
       setCapital(countriesArray[number].capital);
     }
+    setFlag(countriesArray[number].flags.png);
+    setOptionsArray(countriesArray[number]);
     setIsAnswerCorrect(countriesArray[number].name.common);
+
     setOptionsArray((optionsArray) => [...optionArray, optionsArray]);
     for (let i = 0; i < 3; i++) {
-      const random = Math.floor(Math.random() * 250);
-
-      if (
-        countriesArray[random].capital === "" ||
-        countriesArray[random].cca3 === optionsArray.cca3
-      ) {
-        return;
+      let random = Math.floor(Math.random() * 250);
+      if (countriesArray[number] === countriesArray[random]) {
+        optionArray.push(countriesArray[random]);
       } else {
         optionArray.push(countriesArray[random]);
       }
     }
 
-    let timer = setTimeout(() => {}, 10000);
+    let timer = setTimeout(() => {}, 1000);
     return () => {
       clearTimeout(timer);
     };
@@ -58,7 +57,9 @@ const Quiz = (props) => {
     return arr;
   };
 
-  shuffleArray(optionsArray);
+  const shuffledCards = useMemo(() => {
+    return shuffleArray(optionsArray);
+  }, [optionsArray]);
 
   const checkAnswerHandler = (e) => {
     const element = e.currentTarget;
@@ -71,23 +72,18 @@ const Quiz = (props) => {
         checked = true;
       }
     }
+
     if (!checked) {
       if (value === isAnswerCorrect) {
         element.classList.add(styles.correctAnswer);
         setResult(result + 1);
-        console.log(result);
+        setNextBtn(true);
       } else {
         element.classList.add(styles.wrongAnswer);
+        setNextBtn(true);
         for (let child of children) {
           if (child.lastElementChild.textContent === isAnswerCorrect) {
             child.classList.add(styles.correctAnswer);
-            setTimeout(() => {
-              setResult(1);
-              props.onShowResult({
-                showResult: true,
-                result: result,
-              });
-            }, 1000);
           }
         }
       }
@@ -95,10 +91,19 @@ const Quiz = (props) => {
   };
 
   const handleNextQuestion = () => {
-    setNext(!next);
-    if (result === 10) {
-      props.onShowResult(true);
-      props.onShowScore(result);
+    const answers = answersRef.current.children;
+
+    for (const answer of answers) {
+      answer.classList.remove(styles.wrongAnswer, styles.correctAnswer);
+    }
+
+    setNext(next + 1);
+    if (next === 100) {
+      props.onShowResult({
+        showResult: true,
+        result: result,
+      });
+      setResult(0);
     }
   };
 
@@ -117,7 +122,7 @@ const Quiz = (props) => {
 
   const show = props.showGame ? country : capitalCity;
   return (
-    <Card>
+    <Card shuffledCards={shuffledCards}>
       {props.showGame && (
         <div className={styles.flag}>
           <img src={flag} alt="Flag of country" />
@@ -125,20 +130,24 @@ const Quiz = (props) => {
       )}
       <div className={styles.buttonContainer}>
         {show}
-        {optionsArray.map((option) => (
-          <div
-            className={styles.btnAnswer}
-            key={option.cca3}
-            onClick={checkAnswerHandler}
-          >
-            <p>{option.name.common}</p>
-          </div>
-        ))}
+        <div className={styles.fullWidth} ref={answersRef}>
+          {optionsArray.map((option) => (
+            <div
+              className={styles.btnAnswer}
+              key={option.cca3}
+              onClick={checkAnswerHandler}
+            >
+              <p>{option.name.common}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <div className={styles.nextBtn}>
-        <Button onClick={handleNextQuestion} className={styles.next}>
-          Next
-        </Button>
+        {nextBtn && (
+          <Button onClick={handleNextQuestion} className={styles.next}>
+            Next
+          </Button>
+        )}
       </div>
     </Card>
   );
