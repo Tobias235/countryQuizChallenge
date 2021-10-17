@@ -11,7 +11,6 @@ const Quiz = (props) => {
   const [result, setResult] = useState(0);
   const [next, setNext] = useState(0);
   const [nextBtn, setNextBtn] = useState(false);
-
   const answersRef = useRef(null);
 
   const countriesArray = props.countries;
@@ -26,11 +25,15 @@ const Quiz = (props) => {
     setFlag(countriesArray[number].flags.png);
     setOptionsArray(countriesArray[number]);
     setIsAnswerCorrect(countriesArray[number].name.common);
-
     setOptionsArray((optionsArray) => [...optionArray, optionsArray]);
     for (let i = 0; i < 3; i++) {
       let random = Math.floor(Math.random() * 250);
-      if (countriesArray[number] === countriesArray[random]) {
+      let countryName = countriesArray[random].cca3;
+      if (
+        countriesArray[number].cca3 === countryName ||
+        optionArray.some((el) => el.cca3 === countryName)
+      ) {
+        random = random + 1;
         optionArray.push(countriesArray[random]);
       } else {
         optionArray.push(countriesArray[random]);
