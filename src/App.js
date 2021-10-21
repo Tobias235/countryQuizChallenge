@@ -9,7 +9,8 @@ function App() {
   const [game, setGame] = useState(false);
   const [countries, setCountries] = useState([]);
   const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState([]);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,17 +23,15 @@ function App() {
     }
     const responseData = await response.json();
     setCountries(responseData);
-    console.log(responseData);
   };
 
   const handleShowGame = (e) => {
     const game = e.target.innerHTML;
+    setOption(false);
     if (game === "Capital Cities") {
       setGame(false);
-      setOption(false);
     } else {
       setGame(true);
-      setOption(false);
     }
   };
 
@@ -48,7 +47,11 @@ function App() {
   };
 
   const showResultOrGame = showResult ? (
-    <Quizresult onShowOption={handleOptions} onShowResult={score} />
+    <Quizresult
+      onShowOption={handleOptions}
+      onShowResult={score}
+      onShowPic={showResult}
+    />
   ) : (
     <Quiz
       showGame={game}

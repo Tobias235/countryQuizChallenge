@@ -1,12 +1,9 @@
-import { useState } from "react";
 import styles from "./Card.module.css";
 import adventure from "../../images/adventure.svg";
 import winner from "../../images/winners.svg";
 
 const Card = (props) => {
-  const [showResult, setShowResult] = useState(false);
-
-  const showImage = showResult ? (
+  const showImage = props.onShowPic ? (
     <div className={styles.winners}>
       <img
         src={winner}

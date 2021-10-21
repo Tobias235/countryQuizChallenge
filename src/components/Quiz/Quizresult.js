@@ -2,8 +2,9 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styles from "./Quizresult.module.css";
 const Quizresult = (props) => {
+  const pic = props.onShowPic ? true : false;
   return (
-    <Card>
+    <Card onShowPic={pic}>
       <div className={styles.results}>
         <h2>Results</h2>
         <p className={styles.resultText}>

@@ -80,9 +80,9 @@
 }
 
 .correctAnswer {
-  background-color: #60bf88;
-  color: #ffffff;
-  border: none;
+  background-color: #60bf88 !important;
+  color: #ffffff !important;
+  border: none !important;
 }
 
 .wrongAnswer {

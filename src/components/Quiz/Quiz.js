@@ -19,6 +19,7 @@ const Quiz = (props) => {
   let optionArray = [];
 
   useEffect(() => {
+    setNextBtn(false);
     if (countriesArray[number].hasOwnProperty("capital")) {
       setCapital(countriesArray[number].capital);
     }
@@ -77,13 +78,12 @@ const Quiz = (props) => {
     }
 
     if (!checked) {
+      setNextBtn(true);
       if (value === isAnswerCorrect) {
         element.classList.add(styles.correctAnswer);
         setResult(result + 1);
-        setNextBtn(true);
       } else {
         element.classList.add(styles.wrongAnswer);
-        setNextBtn(true);
         for (let child of children) {
           if (child.lastElementChild.textContent === isAnswerCorrect) {
             child.classList.add(styles.correctAnswer);
@@ -101,7 +101,7 @@ const Quiz = (props) => {
     }
 
     setNext(next + 1);
-    if (next === 100) {
+    if (next === 10) {
       props.onShowResult({
         showResult: true,
         result: result,
@@ -122,7 +122,7 @@ const Quiz = (props) => {
       </p>
     </div>
   );
-
+  const answerStyle = !nextBtn ? styles.btnAnswer : "";
   const show = props.showGame ? country : capitalCity;
   return (
     <Card shuffledCards={shuffledCards}>
