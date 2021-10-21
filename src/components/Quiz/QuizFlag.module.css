@@ -1,0 +1,12 @@
+.flag {
+  width: 84px;
+  height: 54px;
+  z-index: 1;
+  margin-left: 35px;
+  margin-bottom: 28px;
+}
+
+.flag img {
+  width: 100%;
+  box-shadow: 3px 3px rgba(131, 131, 131, 0.219);
+}
