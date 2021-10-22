@@ -7,15 +7,6 @@
   align-items: center;
 }
 
-.capitalCity {
-  color: #2f527b;
-  font-size: 24px;
-  line-height: 36px;
-  margin: 0;
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-}
-
 .btnAnswer {
   display: flex;
   font-family: "Poppins", "sans-serif";
@@ -47,20 +38,6 @@
   background-color: #f9a826;
   border: none;
 }
-
-.flag {
-  width: 84px;
-  height: 54px;
-  z-index: 1;
-  margin-left: 35px;
-  margin-bottom: 28px;
-}
-
-.flag img {
-  width: 100%;
-  box-shadow: 3px 3px rgba(131, 131, 131, 0.219);
-}
-
 .nextBtn {
   width: 85%;
   margin: auto;

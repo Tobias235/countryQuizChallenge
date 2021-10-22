@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
+import QuizFlag from "./QuizFlag";
+import QuizTitle from "./QuizTitle";
 import styles from "./Quiz.module.css";
 
 const Quiz = (props) => {
-  const [capital, setCapital] = useState("");
-  const [flag, setFlag] = useState("");
+  const [question, setQuestion] = useState("");
   const [isAnswerCorrect, setIsAnswerCorrect] = useState("");
   const [optionsArray, setOptionsArray] = useState([]);
   const [result, setResult] = useState(0);
@@ -19,11 +20,13 @@ const Quiz = (props) => {
   let optionArray = [];
 
   useEffect(() => {
-    setNextBtn(false);
-    if (countriesArray[number].hasOwnProperty("capital")) {
-      setCapital(countriesArray[number].capital);
+    if (props.showGame) {
+      setQuestion(countriesArray[number].flags.png);
+    } else {
+      if (countriesArray[number].hasOwnProperty("capital")) {
+        setQuestion(countriesArray[number].capital);
+      }
     }
-    setFlag(countriesArray[number].flags.png);
     setOptionsArray(countriesArray[number]);
     setIsAnswerCorrect(countriesArray[number].name.common);
     setOptionsArray((optionsArray) => [...optionArray, optionsArray]);
@@ -94,6 +97,7 @@ const Quiz = (props) => {
   };
 
   const handleNextQuestion = () => {
+    setNextBtn(false);
     const answers = answersRef.current.children;
 
     for (const answer of answers) {
@@ -110,29 +114,11 @@ const Quiz = (props) => {
     }
   };
 
-  const capitalCity = (
-    <div>
-      <p className={styles.capitalCity}>{capital} is the capital of</p>
-    </div>
-  );
-  const country = (
-    <div>
-      <p className={styles.capitalCity}>
-        Which country does this flag belong to?
-      </p>
-    </div>
-  );
-  const answerStyle = !nextBtn ? styles.btnAnswer : "";
-  const show = props.showGame ? country : capitalCity;
   return (
     <Card shuffledCards={shuffledCards}>
-      {props.showGame && (
-        <div className={styles.flag}>
-          <img src={flag} alt="Flag of country" />
-        </div>
-      )}
+      {props.showGame && <QuizFlag flag={question} />}
       <div className={styles.buttonContainer}>
-        {show}
+        <QuizTitle show={props.showGame} capital={question} />
         <div className={styles.fullWidth} ref={answersRef}>
           {optionsArray.map((option) => (
             <div
