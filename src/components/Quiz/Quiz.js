@@ -105,12 +105,11 @@ const Quiz = (props) => {
     }
 
     setNext(next + 1);
-    if (next === 10) {
+    if (next === 9) {
       props.onShowResult({
         showResult: true,
         result: result,
       });
-      setResult(0);
     }
   };
 
