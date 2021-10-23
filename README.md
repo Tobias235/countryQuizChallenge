@@ -36,8 +36,7 @@
 
 ## Overview
 
-![screenshot](\src\images\githubimage.png)
-
+![screenshot](src/images/githubimage.png)
 You can see the demo if you click at the Demo button above or by copying or click this link: <a href="https://tobias235-countryquiz.netlify.app/"></a>
 
 It was difficult in the beggining to know where to start but have to start at one end and finish at some. It was abit difficult to get correct answer to show up if you choose the wrong answer but after some thinking and google searches I managed to solve it. I have also never been in a situation where i needed to mix up order of an array so that was new and had to find a solution for it so it only rendered once. I felt like it was annoying to have to restart quiz every time you answer wrong so I added a limit of 10 questions and show score out of 10.
