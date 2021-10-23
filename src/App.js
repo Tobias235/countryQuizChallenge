@@ -70,6 +70,14 @@ function App() {
     <div>
       <h1>Country Quiz</h1>
       {showOption}
+
+      <footer>
+        <p>
+          created by{" "}
+          <a href="https://devchallenges.io/portfolio/Tobias235">Tobias235</a> -
+          devChallenges.io
+        </p>
+      </footer>
     </div>
   );
 }

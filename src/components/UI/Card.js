@@ -18,9 +18,11 @@ const Card = (props) => {
     />
   );
   return (
-    <div className={`${styles.card} ${props.className}`}>
-      {showImage}
-      {props.children}
+    <div className={styles.container}>
+      <div className={`${styles.card} ${props.className}`}>
+        {showImage}
+        {props.children}
+      </div>
     </div>
   );
 };
