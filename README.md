@@ -36,7 +36,7 @@
 
 ## Overview
 
-![screenshot](https://gyazo.com/4d8f8d35ffd2f7e7b08fe33cb5052f43)
+![screenshot](\src\images\githubimage.png)
 
 You can see the demo if you click at the Demo button above or by copying or click this link: <a href="https://tobias235-countryquiz.netlify.app/"></a>
 
