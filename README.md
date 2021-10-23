@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Country Quiz</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -32,33 +32,31 @@
 - [How to use](#how-to-use)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
-W
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://gyazo.com/4d8f8d35ffd2f7e7b08fe33cb5052f43)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+You can see the demo if you click at the Demo button above or by copying or click this link: <a href="https://tobias235-countryquiz.netlify.app/"></a>
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+It was difficult in the beggining to know where to start but have to start at one end and finish at some. It was abit difficult to get correct answer to show up if you choose the wrong answer but after some thinking and google searches I managed to solve it. I have also never been in a situation where i needed to mix up order of an array so that was new and had to find a solution for it so it only rendered once. I felt like it was annoying to have to restart quiz every time you answer wrong so I added a limit of 10 questions and show score out of 10.
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
 
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps) was to build an application to complete the given user stories.
+
+You can choose if you want capital or flag quiz.
+You can keep going until 10 questions have been answered and see score / 10.
+You can see the correct answer if you choose wrong one.
 
 ## How To Use
 
@@ -68,7 +66,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/Tobias235/countryQuizChallenge
 
 # Install dependencies
 $ npm install
@@ -82,11 +80,9 @@ $ npm start
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
 
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website [your-website.com](https://tobias235.github.io/)
+- GitHub [@your-username](https://github.com/Tobias235)
+- Twitter [@your-twitter](https://twitter.com/TobiasP97)
