@@ -31,13 +31,11 @@
 - [Features](#features)
 - [How to use](#how-to-use)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 <!-- OVERVIEW -->
 
 ## Overview
 
 ![screenshot](src/images/githubimage.png)
-You can see the demo if you click at the Demo button above or by copying or click this link: <a href="https://tobias235-countryquiz.netlify.app/"></a>
 
 It was difficult in the beggining to know where to start but have to start at one end and finish at some. It was abit difficult to get correct answer to show up if you choose the wrong answer but after some thinking and google searches I managed to solve it. I have also never been in a situation where i needed to mix up order of an array so that was new and had to find a solution for it so it only rendered once. I felt like it was annoying to have to restart quiz every time you answer wrong so I added a limit of 10 questions and show score out of 10.
 
@@ -51,7 +49,7 @@ It was difficult in the beggining to know where to start but have to start at on
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8) was to build an application to complete the given user stories.
 
 You can choose if you want capital or flag quiz.
 You can keep going until 10 questions have been answered and see score / 10.
@@ -74,14 +72,8 @@ $ npm install
 $ npm start
 ```
 
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-
 ## Contact
 
-- Website [your-website.com](https://tobias235.github.io/)
-- GitHub [@your-username](https://github.com/Tobias235)
-- Twitter [@your-twitter](https://twitter.com/TobiasP97)
+- Website [tobias235.github.io](https://tobias235.github.io/)
+- GitHub [@Tobias235](https://github.com/Tobias235)
+- Twitter [@TobiasP97](https://twitter.com/TobiasP97)
