@@ -1,4 +1,4 @@
-import styles from "./Card.module.css";
+import styles from "./Card.module.scss";
 import adventure from "../../images/adventure.svg";
 import winner from "../../images/winners.svg";
 

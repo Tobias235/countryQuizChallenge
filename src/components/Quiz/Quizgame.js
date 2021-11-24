@@ -1,4 +1,4 @@
-import styles from "./Quizgame.module.css";
+import styles from "./Quizgame.module.scss";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 const Quizgame = (props) => {

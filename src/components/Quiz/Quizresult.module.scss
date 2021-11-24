@@ -1,0 +1,38 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: #1d355d;
+    font-size: 48px;
+    font-family: "Poppins", "sans-serif";
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 18px;
+    color: #1d355d;
+    font-weight: 400;
+    font-family: "Poppins", "sens-serif";
+    margin: 0;
+
+    span {
+      font-size: 36px;
+      color: #49e77e;
+      font-weight: bold;
+      font-family: "Poppins", "sens-serif";
+    }
+  }
+
+  button {
+    width: 40%;
+    text-align: center;
+    border: 2px solid #1d355d;
+    color: #1d355d;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Poppins", "sans-serif";
+  }
+}

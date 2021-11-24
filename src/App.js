@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Quizgame from "./components/Quiz/Quizgame";
 import Quiz from "./components/Quiz/Quiz";
 import Quizresult from "./components/Quiz/Quizresult";
+import Footer from "./components/UI/Footer";
+import styles from "./App.module.scss";
 
 function App() {
   const [option, setOption] = useState(true);
@@ -12,18 +14,18 @@ function App() {
   const [score, setScore] = useState([]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+      const responseData = await response.json();
+      setCountries(responseData);
+    };
+
     fetchData();
   }, []);
-
-  const fetchData = async () => {
-    const response = await fetch("https://restcountries.com/v3.1/all");
-
-    if (!response.ok) {
-      throw new Error("Something went wrong!");
-    }
-    const responseData = await response.json();
-    setCountries(responseData);
-  };
 
   const handleShowGame = (e) => {
     const game = e.target.innerHTML;
@@ -68,15 +70,10 @@ function App() {
   );
   return (
     <div>
-      <h1>Country Quiz</h1>
+      <h1 className={styles.title}>Country Quiz</h1>
       {showOption}
 
-      <footer>
-        <p>
-          created by <a href="https://tobias235.github.io/">Tobias235</a> -
-          devChallenges.io
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

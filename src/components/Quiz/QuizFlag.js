@@ -1,4 +1,4 @@
-import styles from "./QuizFlag.module.css";
+import styles from "./QuizFlag.module.scss";
 
 const QuizFlag = (props) => {
   return (

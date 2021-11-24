@@ -1,4 +1,4 @@
-import styles from "./QuizTitle.module.css";
+import styles from "./QuizTitle.module.scss";
 
 const QuizTitle = (props) => {
   const capitalCity = (
